@@ -540,9 +540,10 @@
     .pane code {
       display: block;
       font-family: ui-monospace, Menlo, Consolas, monospace;
-      font-size: .82rem;
-      line-height: 2.1;
-      word-break: break-all
+      font-size: .72rem;
+      line-height: 1.8;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
     }
 
     .pane mark {
@@ -962,16 +963,28 @@
           <div class="ba">
             <div class="pane">
               <h3>What you copied</h3>
-              <code>Deploy key: AKIAIOSFODNN7EXAMPLE</code>
-              <code>Bill to: sam@acme.dev</code>
-              <code>Card: 4242 4242 4242 4242</code>
+              <code>def fetch_user_data(user_id):
+    response = requests.get(
+        f"https://api.example.com/users/{user_id}",
+        headers={
+            "Authorization": "Bearer sk-proj-a8K2T7nL3qW6z",
+            "X-Client-Email": "rahul.sharma@example.com",
+            "X-Card-Number": "4111111111111111"
+        }
+    )</code>
             </div>
 
             <div class="pane after">
               <h3>What gets pasted</h3>
-              <code>Deploy key: <mark>&lt;API-key&gt;</mark></code>
-              <code>Bill to: <mark>&lt;Email&gt;</mark></code>
-              <code>Card: <mark>&lt;Card-number&gt;</mark></code>
+              <code>def fetch_user_data(user_id):
+    response = requests.get(
+        f"https://api.example.com/users/{user_id}",
+        headers={
+            "Authorization": "<mark>OPENAI API-KEY</mark>",
+            "X-Client-Email": "<mark>EMAIL-ADDRESS</mark>",
+            "X-Card-Number": "<mark>CREDIT-CARD</mark>"
+        }
+    )</code>
             </div>
           </div>
 
